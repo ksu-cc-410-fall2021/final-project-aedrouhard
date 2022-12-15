@@ -1,0 +1,19 @@
+coverage
+flake8<5.0.0
+flake8-docstrings
+# flake8-html
+lxml
+mypy
+pdoc3
+pep8-naming
+pyhamcrest
+pytest
+pytest-html
+tox
+# werkzeug==2.1.2
+flask
+flask-classful
+python-dotenv
+lib/register-1.0.0-py3-none-any.whl
+
+# https://github.com/lordmauve/flake8-html/issues/30

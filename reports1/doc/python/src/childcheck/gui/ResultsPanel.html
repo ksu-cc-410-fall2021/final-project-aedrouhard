@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>python.src.childcheck.gui.ResultsPanel API documentation</title>
+<meta name="description" content="File for the ResultsPanel …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>python.src.childcheck.gui.ResultsPanel</code></h1>
+</header>
+<section id="section-intro">
+<p>File for the ResultsPanel.</p>
+<p>This is the file with the class for the Results panel
+which displays an Results and associated values.</p>
+<p>Author: Allison Drouhard aedrouhard@ksu.edu
+Version: 0.1</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;File for the ResultsPanel.
+
+This is the file with the class for the Results panel
+which displays an Results and associated values.
+
+Author: Allison Drouhard aedrouhard@ksu.edu
+Version: 0.1
+&#34;&#34;&#34;
+import tkinter as tk
+from tkinter import messagebox
+from tkinter.ttk import Treeview, Scrollbar, Frame, Button
+from typing import Dict
+from src.childcheck.data.person.Factor import Factor
+from src.childcheck.gui.PanelFactory import PanelFactory
+from src.childcheck.data.results.Results import Results
+from src.childcheck.gui.ResultsDialog import ResultsDialog
+
+
+class ResultsPanel(tk.Frame):
+    &#34;&#34;&#34;Results panel class.
+
+    Organizes the information related to the Results.
+
+    Args:
+        __master: The primary panel.
+    &#34;&#34;&#34;
+
+    def __init__(self, master) -&gt; None:
+        &#34;&#34;&#34;Initiater for the Results panel class.
+
+        This method instantiates the class that displays the
+        Results information.
+
+        Args:
+            master: The panel class that instantiates this one.
+        &#34;&#34;&#34;
+        self.__master = master
+        tk.Frame.__init__(self, master=self.__master)
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=1)
+        self.grid_rowconfigure(1, weight=1)
+
+        self.__results: Results = Results()
+
+        results_label = tk.Label(master=self, text=&#34;Results #&#34;)
+        results_label.grid(row=0, column=0, padx=2, pady=2, sticky=&#34;E&#34;)
+
+        self.__results_num = tk.Label(master=self,
+                                      text=&#34;{}&#34;.format(self.__results.results_num))
+        self.__results_num.grid(row=0, column=1, padx=2, pady=2, sticky=&#34;W&#34;)
+
+        self.__factors: Dict[str, Factor] = dict()
+        list_frame = Frame(master=self)
+        list_frame.grid_columnconfigure(0, weight=1)
+        list_frame.grid_rowconfigure(0, weight=1)
+        self.__results_list = Treeview(master=list_frame, show=&#34;tree&#34;,
+                                       selectmode=&#34;browse&#34;)
+        results_list_scrollbar = Scrollbar(master=list_frame, orient=&#34;vertical&#34;,
+                                           command=self.__results_list.yview)
+        self.__results_list.configure(yscrollcommand=results_list_scrollbar.set)
+        self.__results_list.grid(row=0, column=0, sticky=&#34;NSEW&#34;)
+        results_list_scrollbar.grid(row=0, column=1, sticky=&#34;NSE&#34;)
+        list_frame.grid(row=1, column=0, columnspan=2, sticky=&#34;NSEW&#34;)
+
+        edit_button = tk.Button(master=self, text=&#34;Edit&#34;,
+                                command=lambda:  # type: ignore
+                                self.action_performed(&#34;edit&#34;))
+        edit_button.grid(row=2, column=0, columnspan=1, padx=2,
+                         pady=2, sticky=&#34;NSEW&#34;)
+
+        delete_button = Button(master=self, text=&#34;Delete&#34;,
+                               command=lambda:  # type: ignore
+                               self.action_performed(&#34;delete&#34;))
+        delete_button.grid(row=2, column=1, columnspan=1, padx=2,
+                           pady=2, sticky=&#34;NSEW&#34;)
+
+        total = tk.Label(master=self, text=&#34;Total Score:&#34;)
+        total.grid(row=3, column=0, padx=2, pady=2, sticky=&#34;E&#34;)
+
+        self.__total = self.__results.total
+        self.__total_num = tk.Label(master=self, text=self.__total)
+        self.__total_num.grid(row=3, column=1, padx=2, pady=2, sticky=&#34;W&#34;)
+
+        new_button = Button(master=self, text=&#34;New Results&#34;,
+                            command=lambda:  # type: ignore
+                            self.action_performed(&#34;new&#34;))
+        new_button.grid(row=4, column=0, columnspan=1, padx=2,
+                        pady=2, sticky=&#34;NSEW&#34;)
+
+        submit_button = Button(master=self, text=&#34;Submit&#34;,
+                               command=lambda:  # type: ignore
+                               self.action_performed(&#34;submit&#34;))
+        submit_button.grid(row=4, column=1, columnspan=1, padx=2,
+                           pady=2, sticky=&#34;NSEW&#34;)
+
+    def action_performed(self, text: str) -&gt; None:
+        &#34;&#34;&#34;Handle button actions.&#34;&#34;&#34;
+        print(text)
+        if text == &#34;edit&#34;:
+            node = self.__results_list.focus()
+            if node:
+                while node not in self.__factors:
+                    node = self.__results_list.parent(node)
+                factor: Factor = self.__factors[node]
+                self.__results.remove_factor(factor)
+                panel = PanelFactory()
+                self.__master.load_panel(panel.get_panel(self.__master,
+                                                         factor))
+
+        elif text == &#34;delete&#34;:
+            node = self.__results_list.focus()
+            if node:
+                while node not in self.__factors:
+                    node = self.__results_list.parent(node)
+                self.__results.remove_factor(self.__factors[node])
+                del self.__factors[node]
+                self.__results_list.delete(node)
+                self.__total_num[&#39;text&#39;] = self.__results.total
+
+        elif text == &#34;new&#34;:
+            self.__results = Results()
+            self.__results_num[&#39;text&#39;] = self.__results.results_num
+            self.__factors = dict()
+            for node in self.__results_list.get_children():
+                self.__results_list.delete(node)
+            self.__total_num[&#39;text&#39;] = self.__results.total
+
+        elif text == &#34;submit&#34;:
+            dialog = SelectionDialog(self.__master, title=&#34;Submit&#34;,
+                                     message=&#34;View Results?&#34;,
+                                     options=[&#34;Yes&#34;, &#34;No&#34;])
+            if dialog.result == &#34;Yes&#34;:
+                cash_dialog = CashDialog(self.__master)
+                print(cash_dialog.result)
+                print(cash_dialog.data)
+            elif dialog.result == &#34;No&#34;:
+                reader: CardReader = CardReader()
+                result: CardTransactionResult = reader.run_card()
+                if result == CardTransactionResult.APPROVED:
+                    messagebox.showinfo(&#34;Success&#34;, str(result))
+                else:
+                    messagebox.showerror(&#34;Error&#34;, str(result))
+            if (dialog.result == &#34;Cash&#34;) or (result == CardTransactionResult.APPROVED):
+                receipt = ReceiptPrinter()
+                receipt.start_receipt()
+                receipt.print_line(&#34;Results Number: {}&#34;.format(self.__Results.Results_num-1))
+                for thing in self.__Results:
+                    receipt.print_line(&#34;\n&#34;)
+                    if isinstance(thing, Combo):
+                        for x in thing.notes:
+                            receipt.print_line(x)
+                        for i in thing.Factors:
+                            receipt.print_line(i.name)
+                            if len(i.notes) &gt; 0:
+                                for y in i.notes:
+                                    receipt.print_line(&#34;    &#34; + y)
+                        receipt.print_line(&#34;${:.2f}&#34;.format(thing.price))
+                    else:
+                        receipt.print_line(thing.name)
+                        for x in thing.notes:
+                            receipt.print_line(&#34;    &#34; + x)
+                        receipt.print_line(&#34;${:.2f}&#34;.format(thing.price))
+                receipt.print_line(&#34;\nSubtotal: ${:.2f}\n&#34;.format(self.__Results.subtotal))
+                receipt.print_line(&#34;Tax: ${:.2f}\n&#34;.format(self.__Results.tax))
+                receipt.print_line(&#34;Total: ${:.2f}\n&#34;.format(self.__Results.total))
+                if dialog.result == &#34;Cash&#34;:
+                    receipt.print_line(&#34;Paid with Cash&#34;)
+                elif dialog.result == &#34;Credit/Debit&#34;:
+                    receipt.print_line(&#34;Paid with Credit/Debit&#34;)
+                receipt.end_receipt()
+                receipt.close()
+
+    def save_factor(self, factor: Factor) -&gt; None:
+        &#34;&#34;&#34;Method to save Factor.&#34;&#34;&#34;
+        for factor_id, value in self.__factors.items():
+            if factor is value:
+                self.__update_tree(factor, factor_id)
+                self.__results.add_factor(factor)
+                self.__total_num[&#39;text&#39;] = self.__results.total
+                return
+        self.__factors[self.__update_tree(factor)] = factor
+        self.__results.add_factor(factor)
+        self.__total_num[&#39;text&#39;] = self.__results.total
+
+    def __update_tree(self, factor: Factor, index: str = &#34;end&#34;) -&gt; str:
+        &#34;&#34;&#34;Private method to update tree.&#34;&#34;&#34;
+        if index == &#34;end&#34;:
+            index = self.__results_list.insert(parent=&#34;&#34;, index=&#34;end&#34;,
+                                               text=str(factor))
+        else:
+            self.__results_list.item(index, text=str(factor))
+            for child in self.__results_list.get_children(index):
+                self.__results_list.delete(child)
+        self.__results_list.item(index, open=True)
+        for line in factor.notes:
+            self.__results_list.insert(parent=index, index=&#34;end&#34;,
+                                       text=line)
+        return index</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="python.src.childcheck.gui.ResultsPanel.ResultsPanel"><code class="flex name class">
+<span>class <span class="ident">ResultsPanel</span></span>
+<span>(</span><span>master)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Results panel class.</p>
+<p>Organizes the information related to the Results.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>__master</code></strong></dt>
+<dd>The primary panel.</dd>
+</dl>
+<p>Initiater for the Results panel class.</p>
+<p>This method instantiates the class that displays the
+Results information.</p>
+<h2 id="args_1">Args</h2>
+<dl>
+<dt><strong><code>master</code></strong></dt>
+<dd>The panel class that instantiates this one.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ResultsPanel(tk.Frame):
+    &#34;&#34;&#34;Results panel class.
+
+    Organizes the information related to the Results.
+
+    Args:
+        __master: The primary panel.
+    &#34;&#34;&#34;
+
+    def __init__(self, master) -&gt; None:
+        &#34;&#34;&#34;Initiater for the Results panel class.
+
+        This method instantiates the class that displays the
+        Results information.
+
+        Args:
+            master: The panel class that instantiates this one.
+        &#34;&#34;&#34;
+        self.__master = master
+        tk.Frame.__init__(self, master=self.__master)
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=1)
+        self.grid_rowconfigure(1, weight=1)
+
+        self.__results: Results = Results()
+
+        results_label = tk.Label(master=self, text=&#34;Results #&#34;)
+        results_label.grid(row=0, column=0, padx=2, pady=2, sticky=&#34;E&#34;)
+
+        self.__results_num = tk.Label(master=self,
+                                      text=&#34;{}&#34;.format(self.__results.results_num))
+        self.__results_num.grid(row=0, column=1, padx=2, pady=2, sticky=&#34;W&#34;)
+
+        self.__factors: Dict[str, Factor] = dict()
+        list_frame = Frame(master=self)
+        list_frame.grid_columnconfigure(0, weight=1)
+        list_frame.grid_rowconfigure(0, weight=1)
+        self.__results_list = Treeview(master=list_frame, show=&#34;tree&#34;,
+                                       selectmode=&#34;browse&#34;)
+        results_list_scrollbar = Scrollbar(master=list_frame, orient=&#34;vertical&#34;,
+                                           command=self.__results_list.yview)
+        self.__results_list.configure(yscrollcommand=results_list_scrollbar.set)
+        self.__results_list.grid(row=0, column=0, sticky=&#34;NSEW&#34;)
+        results_list_scrollbar.grid(row=0, column=1, sticky=&#34;NSE&#34;)
+        list_frame.grid(row=1, column=0, columnspan=2, sticky=&#34;NSEW&#34;)
+
+        edit_button = tk.Button(master=self, text=&#34;Edit&#34;,
+                                command=lambda:  # type: ignore
+                                self.action_performed(&#34;edit&#34;))
+        edit_button.grid(row=2, column=0, columnspan=1, padx=2,
+                         pady=2, sticky=&#34;NSEW&#34;)
+
+        delete_button = Button(master=self, text=&#34;Delete&#34;,
+                               command=lambda:  # type: ignore
+                               self.action_performed(&#34;delete&#34;))
+        delete_button.grid(row=2, column=1, columnspan=1, padx=2,
+                           pady=2, sticky=&#34;NSEW&#34;)
+
+        total = tk.Label(master=self, text=&#34;Total Score:&#34;)
+        total.grid(row=3, column=0, padx=2, pady=2, sticky=&#34;E&#34;)
+
+        self.__total = self.__results.total
+        self.__total_num = tk.Label(master=self, text=self.__total)
+        self.__total_num.grid(row=3, column=1, padx=2, pady=2, sticky=&#34;W&#34;)
+
+        new_button = Button(master=self, text=&#34;New Results&#34;,
+                            command=lambda:  # type: ignore
+                            self.action_performed(&#34;new&#34;))
+        new_button.grid(row=4, column=0, columnspan=1, padx=2,
+                        pady=2, sticky=&#34;NSEW&#34;)
+
+        submit_button = Button(master=self, text=&#34;Submit&#34;,
+                               command=lambda:  # type: ignore
+                               self.action_performed(&#34;submit&#34;))
+        submit_button.grid(row=4, column=1, columnspan=1, padx=2,
+                           pady=2, sticky=&#34;NSEW&#34;)
+
+    def action_performed(self, text: str) -&gt; None:
+        &#34;&#34;&#34;Handle button actions.&#34;&#34;&#34;
+        print(text)
+        if text == &#34;edit&#34;:
+            node = self.__results_list.focus()
+            if node:
+                while node not in self.__factors:
+                    node = self.__results_list.parent(node)
+                factor: Factor = self.__factors[node]
+                self.__results.remove_factor(factor)
+                panel = PanelFactory()
+                self.__master.load_panel(panel.get_panel(self.__master,
+                                                         factor))
+
+        elif text == &#34;delete&#34;:
+            node = self.__results_list.focus()
+            if node:
+                while node not in self.__factors:
+                    node = self.__results_list.parent(node)
+                self.__results.remove_factor(self.__factors[node])
+                del self.__factors[node]
+                self.__results_list.delete(node)
+                self.__total_num[&#39;text&#39;] = self.__results.total
+
+        elif text == &#34;new&#34;:
+            self.__results = Results()
+            self.__results_num[&#39;text&#39;] = self.__results.results_num
+            self.__factors = dict()
+            for node in self.__results_list.get_children():
+                self.__results_list.delete(node)
+            self.__total_num[&#39;text&#39;] = self.__results.total
+
+        elif text == &#34;submit&#34;:
+            dialog = SelectionDialog(self.__master, title=&#34;Submit&#34;,
+                                     message=&#34;View Results?&#34;,
+                                     options=[&#34;Yes&#34;, &#34;No&#34;])
+            if dialog.result == &#34;Yes&#34;:
+                cash_dialog = CashDialog(self.__master)
+                print(cash_dialog.result)
+                print(cash_dialog.data)
+            elif dialog.result == &#34;No&#34;:
+                reader: CardReader = CardReader()
+                result: CardTransactionResult = reader.run_card()
+                if result == CardTransactionResult.APPROVED:
+                    messagebox.showinfo(&#34;Success&#34;, str(result))
+                else:
+                    messagebox.showerror(&#34;Error&#34;, str(result))
+            if (dialog.result == &#34;Cash&#34;) or (result == CardTransactionResult.APPROVED):
+                receipt = ReceiptPrinter()
+                receipt.start_receipt()
+                receipt.print_line(&#34;Results Number: {}&#34;.format(self.__Results.Results_num-1))
+                for thing in self.__Results:
+                    receipt.print_line(&#34;\n&#34;)
+                    if isinstance(thing, Combo):
+                        for x in thing.notes:
+                            receipt.print_line(x)
+                        for i in thing.Factors:
+                            receipt.print_line(i.name)
+                            if len(i.notes) &gt; 0:
+                                for y in i.notes:
+                                    receipt.print_line(&#34;    &#34; + y)
+                        receipt.print_line(&#34;${:.2f}&#34;.format(thing.price))
+                    else:
+                        receipt.print_line(thing.name)
+                        for x in thing.notes:
+                            receipt.print_line(&#34;    &#34; + x)
+                        receipt.print_line(&#34;${:.2f}&#34;.format(thing.price))
+                receipt.print_line(&#34;\nSubtotal: ${:.2f}\n&#34;.format(self.__Results.subtotal))
+                receipt.print_line(&#34;Tax: ${:.2f}\n&#34;.format(self.__Results.tax))
+                receipt.print_line(&#34;Total: ${:.2f}\n&#34;.format(self.__Results.total))
+                if dialog.result == &#34;Cash&#34;:
+                    receipt.print_line(&#34;Paid with Cash&#34;)
+                elif dialog.result == &#34;Credit/Debit&#34;:
+                    receipt.print_line(&#34;Paid with Credit/Debit&#34;)
+                receipt.end_receipt()
+                receipt.close()
+
+    def save_factor(self, factor: Factor) -&gt; None:
+        &#34;&#34;&#34;Method to save Factor.&#34;&#34;&#34;
+        for factor_id, value in self.__factors.items():
+            if factor is value:
+                self.__update_tree(factor, factor_id)
+                self.__results.add_factor(factor)
+                self.__total_num[&#39;text&#39;] = self.__results.total
+                return
+        self.__factors[self.__update_tree(factor)] = factor
+        self.__results.add_factor(factor)
+        self.__total_num[&#39;text&#39;] = self.__results.total
+
+    def __update_tree(self, factor: Factor, index: str = &#34;end&#34;) -&gt; str:
+        &#34;&#34;&#34;Private method to update tree.&#34;&#34;&#34;
+        if index == &#34;end&#34;:
+            index = self.__results_list.insert(parent=&#34;&#34;, index=&#34;end&#34;,
+                                               text=str(factor))
+        else:
+            self.__results_list.item(index, text=str(factor))
+            for child in self.__results_list.get_children(index):
+                self.__results_list.delete(child)
+        self.__results_list.item(index, open=True)
+        for line in factor.notes:
+            self.__results_list.insert(parent=index, index=&#34;end&#34;,
+                                       text=line)
+        return index</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.Frame</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="python.src.childcheck.gui.ResultsPanel.ResultsPanel.action_performed"><code class="name flex">
+<span>def <span class="ident">action_performed</span></span>(<span>self, text: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Handle button actions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def action_performed(self, text: str) -&gt; None:
+    &#34;&#34;&#34;Handle button actions.&#34;&#34;&#34;
+    print(text)
+    if text == &#34;edit&#34;:
+        node = self.__results_list.focus()
+        if node:
+            while node not in self.__factors:
+                node = self.__results_list.parent(node)
+            factor: Factor = self.__factors[node]
+            self.__results.remove_factor(factor)
+            panel = PanelFactory()
+            self.__master.load_panel(panel.get_panel(self.__master,
+                                                     factor))
+
+    elif text == &#34;delete&#34;:
+        node = self.__results_list.focus()
+        if node:
+            while node not in self.__factors:
+                node = self.__results_list.parent(node)
+            self.__results.remove_factor(self.__factors[node])
+            del self.__factors[node]
+            self.__results_list.delete(node)
+            self.__total_num[&#39;text&#39;] = self.__results.total
+
+    elif text == &#34;new&#34;:
+        self.__results = Results()
+        self.__results_num[&#39;text&#39;] = self.__results.results_num
+        self.__factors = dict()
+        for node in self.__results_list.get_children():
+            self.__results_list.delete(node)
+        self.__total_num[&#39;text&#39;] = self.__results.total
+
+    elif text == &#34;submit&#34;:
+        dialog = SelectionDialog(self.__master, title=&#34;Submit&#34;,
+                                 message=&#34;View Results?&#34;,
+                                 options=[&#34;Yes&#34;, &#34;No&#34;])
+        if dialog.result == &#34;Yes&#34;:
+            cash_dialog = CashDialog(self.__master)
+            print(cash_dialog.result)
+            print(cash_dialog.data)
+        elif dialog.result == &#34;No&#34;:
+            reader: CardReader = CardReader()
+            result: CardTransactionResult = reader.run_card()
+            if result == CardTransactionResult.APPROVED:
+                messagebox.showinfo(&#34;Success&#34;, str(result))
+            else:
+                messagebox.showerror(&#34;Error&#34;, str(result))
+        if (dialog.result == &#34;Cash&#34;) or (result == CardTransactionResult.APPROVED):
+            receipt = ReceiptPrinter()
+            receipt.start_receipt()
+            receipt.print_line(&#34;Results Number: {}&#34;.format(self.__Results.Results_num-1))
+            for thing in self.__Results:
+                receipt.print_line(&#34;\n&#34;)
+                if isinstance(thing, Combo):
+                    for x in thing.notes:
+                        receipt.print_line(x)
+                    for i in thing.Factors:
+                        receipt.print_line(i.name)
+                        if len(i.notes) &gt; 0:
+                            for y in i.notes:
+                                receipt.print_line(&#34;    &#34; + y)
+                    receipt.print_line(&#34;${:.2f}&#34;.format(thing.price))
+                else:
+                    receipt.print_line(thing.name)
+                    for x in thing.notes:
+                        receipt.print_line(&#34;    &#34; + x)
+                    receipt.print_line(&#34;${:.2f}&#34;.format(thing.price))
+            receipt.print_line(&#34;\nSubtotal: ${:.2f}\n&#34;.format(self.__Results.subtotal))
+            receipt.print_line(&#34;Tax: ${:.2f}\n&#34;.format(self.__Results.tax))
+            receipt.print_line(&#34;Total: ${:.2f}\n&#34;.format(self.__Results.total))
+            if dialog.result == &#34;Cash&#34;:
+                receipt.print_line(&#34;Paid with Cash&#34;)
+            elif dialog.result == &#34;Credit/Debit&#34;:
+                receipt.print_line(&#34;Paid with Credit/Debit&#34;)
+            receipt.end_receipt()
+            receipt.close()</code></pre>
+</details>
+</dd>
+<dt id="python.src.childcheck.gui.ResultsPanel.ResultsPanel.save_factor"><code class="name flex">
+<span>def <span class="ident">save_factor</span></span>(<span>self, factor: src.childcheck.data.person.Factor.Factor) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to save Factor.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_factor(self, factor: Factor) -&gt; None:
+    &#34;&#34;&#34;Method to save Factor.&#34;&#34;&#34;
+    for factor_id, value in self.__factors.items():
+        if factor is value:
+            self.__update_tree(factor, factor_id)
+            self.__results.add_factor(factor)
+            self.__total_num[&#39;text&#39;] = self.__results.total
+            return
+    self.__factors[self.__update_tree(factor)] = factor
+    self.__results.add_factor(factor)
+    self.__total_num[&#39;text&#39;] = self.__results.total</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="python.src.childcheck.gui" href="index.html">python.src.childcheck.gui</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="python.src.childcheck.gui.ResultsPanel.ResultsPanel" href="#python.src.childcheck.gui.ResultsPanel.ResultsPanel">ResultsPanel</a></code></h4>
+<ul class="">
+<li><code><a title="python.src.childcheck.gui.ResultsPanel.ResultsPanel.action_performed" href="#python.src.childcheck.gui.ResultsPanel.ResultsPanel.action_performed">action_performed</a></code></li>
+<li><code><a title="python.src.childcheck.gui.ResultsPanel.ResultsPanel.save_factor" href="#python.src.childcheck.gui.ResultsPanel.ResultsPanel.save_factor">save_factor</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
